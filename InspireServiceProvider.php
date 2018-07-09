@@ -33,7 +33,7 @@ class InspireServiceProvider extends ServiceProvider
          * loadRoutesFrom method.
          */
          Route::group([
-             'namespace' => 'Tetravalence\Autoblog\Http\Controllers',
+             'namespace' => 'Tetravalence\Inspire\Http\Controllers',
          ], function () {
             $this->loadRoutesFrom(dirname(dirname(__FILE__)).
                 '/routes/blog.php');
@@ -44,6 +44,13 @@ class InspireServiceProvider extends ServiceProvider
          */
         $this->loadMigrationsFrom(dirname(dirname(__FILE__)).
             '/database/migrations');
+
+        /* To register the package's views with Laravel, you need to use the
+         * service provider's LoadViewsFrom method.
+         */
+         $this->loadViewsFrom(dirname(dirname(__FILE__)).
+            '/resources/views/themes', 'inspire');
+
     }
 
     /**
