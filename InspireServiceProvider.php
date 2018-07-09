@@ -18,6 +18,14 @@ class InspireServiceProvider extends ServiceProvider
          * @var boolval
          */
         protected $defer = false;
+
+        /* Typically, you will need to publish your package's configuration file
+         * to the application's own config directory.
+         */
+        $this->publishes([
+            dirname(dirname(__FILE__)).
+                '/config/inspire.php' => config_path('inspire.php'),
+        ]);
     }
 
     /**
