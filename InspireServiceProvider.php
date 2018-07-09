@@ -26,6 +26,12 @@ class InspireServiceProvider extends ServiceProvider
             dirname(dirname(__FILE__)).
                 '/config/inspire.php' => config_path('inspire.php'),
         ]);
+
+        /* If your package contains routes, you may load them using the
+         * loadRoutesFrom method.
+         */
+        $this->loadRoutesFrom(dirname(dirname(__FILE__)).
+            '/routes/blog.php');
     }
 
     /**
