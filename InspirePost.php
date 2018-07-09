@@ -8,4 +8,6 @@ class InspirePost extends Model
 {
     public $timestamps = false;
 
+    protected $table = 'posts';
+
 }
