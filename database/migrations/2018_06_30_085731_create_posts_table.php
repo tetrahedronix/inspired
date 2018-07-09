@@ -13,6 +13,16 @@ class CreatePostsTable extends Migration
      */
     public function up()
     {
+        if (Schema::hasColumn('users', 'id')) {
+            Schema::table('users', function (Blueprint $table) {
+                $table->dropColumn('id');
+                //$table->bigIncrements('id');
+            });
+            Schema::table('users', function (Blueprint $table) {
+                $table->bigIncrements('id')->first();
+            });
+        }
+
         Schema::create('posts', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('post_uid', false, true)->default(0);
