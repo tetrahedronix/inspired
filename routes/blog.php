@@ -1,5 +1,3 @@
 <?php
 
-Route::get('/blog', function () {
-
-});
+Route::get('/blog', 'InspireController@index');
