@@ -8,19 +8,19 @@ use Illuminate\Support\ServiceProvider;
 class InspireServiceProvider extends ServiceProvider
 {
     /**
+     * Indicates if loading of provider is deferred.
+     *
+     * @var boolval
+     */
+    protected $defer = false;
+
+    /**
      * Bootstrap any application services.
      *
      * @return void
      */
     public function boot()
     {
-        /**
-         * Indicates if loading of provider is deferred.
-         *
-         * @var boolval
-         */
-        protected $defer = false;
-
         /* Typically, you will need to publish your package's configuration file
          * to the application's own config directory.
          */
