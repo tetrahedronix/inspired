@@ -27,7 +27,7 @@ class InspireServiceProvider extends ServiceProvider
         $this->publishes([
             dirname(dirname(__FILE__)).
                 '/config/inspire.php' => config_path('inspire.php'),
-            ], 'autoblog-config');
+            ], 'inspire-config');
 
         /* If your package contains routes, you may load them using the
          * loadRoutesFrom method.

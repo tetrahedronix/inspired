@@ -14,18 +14,20 @@ class InspireSettings extends Model
 
     public static function template()
     {
-        $default_theme = config('inspire.template', 'default');
-
-        /* $current_theme = DB::table('settings')->
-            where('settings_key', 'template')->value('settings_value'); */
-
-        $current_theme = static::where('settings_key', 'template')->
+        $current_vendor = static::where('settings_key', 'vendor')->
             first()->attributes['settings_value'];
 
-        if (is_null($current_theme) || empty($current_theme)) {
-            dd($default_theme);
+        $current_name = static::where('settings_key', 'template')->
+            first()->attributes['settings_value'];
+
+        if ( is_string($current_vendor) && is_string($current_name) ) {
+            return ['vendor' => $current_vendor, 'name' => $current_name];
         }
 
-        return $current_theme;
+        $default_vendor = config('inspire.template.vendor', 'tetravalence');
+
+        $default_name = config('inspire.template.name', 'default');
+
+        return ['vendor' => $default_vendor, 'name' => $default_name];
     }
 }

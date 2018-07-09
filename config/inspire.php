@@ -1,5 +1,8 @@
 <?php
 
 return [
-    'template' => 'default',
+    'template' => [
+        'vendor' => 'tetravalence',
+        'name' => 'sandbox',
+    ],
 ];

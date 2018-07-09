@@ -21,6 +21,9 @@ class InspireController extends Controller
 
         $template = Settings::template();
 
-        return view('inspire::templates.'.$template.'.index', compact('posts'));
+        $page = 'inspire::templates.'.$template['vendor'].
+            '.'.$template['name'].'.index';
+
+        return view($page, compact('posts'));
     }
 }
