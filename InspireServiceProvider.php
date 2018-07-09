@@ -1,4 +1,5 @@
 <?php
+
 namespace Tetravalence\Inspire;
 
 use Illuminate\Support\ServiceProvider;
@@ -32,6 +33,12 @@ class InspireServiceProvider extends ServiceProvider
          */
         $this->loadRoutesFrom(dirname(dirname(__FILE__)).
             '/routes/blog.php');
+
+        /* If your package conains database migrations, you may use the
+         * loadMigrationsFrom method to inform Laravel how to load them.
+         */
+        $this->loadMigrationsFrom(dirname(dirname(__FILE__)).
+            '/database/migrations');
     }
 
     /**
