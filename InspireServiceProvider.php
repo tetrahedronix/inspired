@@ -12,7 +12,12 @@ class InspireServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-
+        /**
+         * Indicates if loading of provider is deferred.
+         *
+         * @var boolval
+         */
+        protected $defer = false;
     }
 
     /**
