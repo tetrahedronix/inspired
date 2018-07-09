@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use Tetravalence\Inspire\InspirePost as Post;
 use Tetravalence\Inspire\InspireSettings as Settings;
 
-class InspireController extends Controller
+class InspirePostController extends Controller
 {
     /**
      * Display a listing of the resource.

@@ -1,3 +1,3 @@
 <?php
 
-Route::get('/blog', 'InspireController@index');
+Route::get('/blog', 'InspirePostController@index');
