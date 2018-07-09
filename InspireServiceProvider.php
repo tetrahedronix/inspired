@@ -49,7 +49,7 @@ class InspireServiceProvider extends ServiceProvider
          * service provider's LoadViewsFrom method.
          */
          $this->loadViewsFrom(dirname(dirname(__FILE__)).
-            '/resources/views/themes', 'inspire');
+            '/resources/views', 'inspire');
 
     }
 
