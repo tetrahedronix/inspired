@@ -1,0 +1,30 @@
+{
+    "name": "tetravalence/inspire",
+    "description": "Another content management system for Laravel framework",
+    "keywords": ["laravel", "inspire", "cms"],
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Tetravalence\\Inspire\\": "src/"
+        }
+    },
+    "require": {
+        "illuminate/support": "5.6.x"
+    },
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "Giulio",
+            "email": "giupersu@yahoo.it"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Tetravalence\\Inspire\\InspireServiceProvider"
+            ]
+        }
+    }
+}
