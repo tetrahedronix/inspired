@@ -99,6 +99,21 @@ class InspireServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        /* To merge your own package configuration file with the application's
+         * copy.
+         */
+        $this->registerConfiguration();
+    }
+
+    /**
+     * Setup the configuration for Inspire.
+     *
+     * @return void
+     */
+    protected function registerConfiguration()
+    {
+        $packageConfigFile = dirname(dirname(__FILE__)) . '/config/inspire.php';
+
+        $this->mergeConfigFrom($packageConfigFile, 'inspire');
     }
 }
