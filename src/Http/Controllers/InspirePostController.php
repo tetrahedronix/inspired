@@ -4,8 +4,8 @@ namespace Tetravalence\Inspire\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Tetravalence\Inspire\Template;
 use Tetravalence\Inspire\InspirePost as Post;
-use Tetravalence\Inspire\InspireSettings as Settings;
 
 class InspirePostController extends Controller
 {
@@ -19,10 +19,11 @@ class InspirePostController extends Controller
         // GET /posts
         $posts = Post::all();
 
-        $template = Settings::template();
+        $vendor = Template::getVendor();
 
-        $page = 'inspire::templates.'.$template['vendor'].
-            '.'.$template['name'].'.index';
+        $name = Template::getName();
+
+        $page = 'inspire::templates.'.$vendor.'.'.$name.'.index';
 
         return view($page, compact('posts'));
     }
