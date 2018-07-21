@@ -9,6 +9,10 @@ use Tetravalence\Inspire\InspirePost as Post;
 
 class InspirePostController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('web');
+    }
     /**
      * Display a listing of the resource.
      *
