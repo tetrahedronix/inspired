@@ -12,7 +12,7 @@ class Template
             first()->toArray();
 
         if (is_string($current_vendor['settings_value'])) {
-            return $current_vendor;
+            return $current_vendor['settings_value'];
         }
 
         return config('inspire.template.vendor', 'tetravalence');
@@ -24,10 +24,10 @@ class Template
             first()->toArray();
 
         if (is_string($current_name['settings_value'])) {
-            return $current_name;
+            return $current_name['settings_value'];
         }
 
-        return config('inspire.template.name', 'default');
+        return config('inspire.template.name', 'sandbox');
     }
 
 }
