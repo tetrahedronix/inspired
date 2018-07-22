@@ -9,9 +9,9 @@ class Template
     public static function getVendor()
     {
         $current_vendor = Settings::where('settings_key', 'vendor')->
-            first()->attributes['settings_value'];
+            first()->toArray();
 
-        if (is_string($current_vendor)) {
+        if (is_string($current_vendor['settings_value'])) {
             return $current_vendor;
         }
 
@@ -21,9 +21,9 @@ class Template
     public static function getName()
     {
         $current_name = Settings::where('settings_key', 'template')->
-            first()->attributes['settings_value'];
+            first()->toArray();
 
-        if (is_string($current_name)) {
+        if (is_string($current_name['settings_value'])) {
             return $current_name;
         }
 
