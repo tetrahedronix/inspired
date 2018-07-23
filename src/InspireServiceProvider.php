@@ -7,6 +7,7 @@ use Illuminate\Support\ServiceProvider;
 
 class InspireServiceProvider extends ServiceProvider
 {
+    use InspireServiceBindings;
     /**
      * Indicates if loading of provider is deferred.
      *
@@ -103,6 +104,9 @@ class InspireServiceProvider extends ServiceProvider
          * copy.
          */
         $this->registerConfiguration();
+        /* Register bindings in the container.
+         */
+        $this->registerServices();
     }
 
     /**
@@ -115,5 +119,19 @@ class InspireServiceProvider extends ServiceProvider
         $packageConfigFile = dirname(dirname(__FILE__)) . '/config/inspire.php';
 
         $this->mergeConfigFrom($packageConfigFile, 'inspire');
+    }
+
+    /**
+     * Register Inspired's services in the container.
+     *
+     * @return void
+     */
+    public function registerServices()
+    {
+        foreach ($this->serviceBindings as $key => $value) {
+            is_numeric($key) ?
+                $this->app->singleton($value) :
+                $this->app->singleton($key, $value);
+        }
     }
 }
