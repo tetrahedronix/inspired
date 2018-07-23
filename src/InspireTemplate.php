@@ -15,7 +15,7 @@ class InspireTemplate
             return $current_vendor['settings_value'];
         }
 
-        return config('inspire.template.vendor', 'tetravalence');
+        return config('inspire.settings.vendor', 'tetravalence');
     }
 
     public static function getName()
@@ -27,7 +27,7 @@ class InspireTemplate
             return $current_name['settings_value'];
         }
 
-        return config('inspire.template.name', 'sandbox');
+        return config('inspire.settings.template', 'sandbox');
     }
 
 }

@@ -1,12 +1,11 @@
 <?php
 
 return [
-    'template' => [
+    'settings' => [
+        'baseurl' => env('APP_URL', 'http://localhost'),
         'vendor' => 'tetravalence',
-        'name' => 'sandbox',
+        'template' => 'sandbox',
+        'title' => env('APP_NAME', 'Inspired'),
+        'description' => 'Just another Inspired site',
     ],
-    'website' => [
-        'title' => 'Inspired',
-        'description' => 'Just another Inspired site'
-    ]
 ];

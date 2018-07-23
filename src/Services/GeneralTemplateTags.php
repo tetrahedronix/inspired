@@ -37,7 +37,7 @@ class GeneralTemplateTags
             return $current_title;
         }
 
-        return config('inspire.website.title', 'Get Inspired');
+        return config('inspire.settings.title', 'Get Inspired');
     }
 
     /**
@@ -53,7 +53,7 @@ class GeneralTemplateTags
             return $current_description;
         }
 
-        return config('inspire.website.description',
+        return config('inspire.settings.description',
             'Just another Inspired site');
     }
 
