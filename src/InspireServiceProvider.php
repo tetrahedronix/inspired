@@ -30,7 +30,7 @@ class InspireServiceProvider extends ServiceProvider
         /* If your package contains routes, you may load them using the
          * loadRoutesFrom method.
          */
-        $this->bootRoutes();
+        $this->app->booted([$this, 'bootRoutes']);
 
         /* If your package conains database migrations, you may use the
          * loadMigrationsFrom method to inform Laravel how to load them.
@@ -83,7 +83,7 @@ class InspireServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    protected function bootRoutes()
+    public function bootRoutes()
     {
         Route::group([
             'namespace' => 'Tetravalence\Inspire\Http\Controllers',
