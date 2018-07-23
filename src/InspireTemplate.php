@@ -4,7 +4,7 @@ namespace Tetravalence\Inspire;
 
 use Tetravalence\Inspire\InspireSettings as Settings;
 
-class Template
+class InspireTemplate
 {
     public static function getVendor()
     {

@@ -4,7 +4,7 @@ namespace Tetravalence\Inspire\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Tetravalence\Inspire\Template;
+use Tetravalence\Inspire\InspireTemplate as Template;
 use Tetravalence\Inspire\InspirePost as Post;
 
 class InspirePostController extends Controller
