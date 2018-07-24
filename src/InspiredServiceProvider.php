@@ -89,7 +89,7 @@ class InspiredServiceProvider extends ServiceProvider
             'namespace' => 'Tetravalence\Inspired\Http\Controllers',
         ], function () {
            $this->loadRoutesFrom(dirname(dirname(__FILE__)).
-               '/routes/blog.php');
+               '/routes/web.php');
        });
     }
 
