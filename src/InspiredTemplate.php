@@ -6,7 +6,18 @@ use Tetravalence\Inspired\InspiredSettings as Settings;
 
 class InspiredTemplate
 {
-    public static function getVendor()
+    public static function getTheme()
+    {
+        $vendor = static::getVendor();
+
+        $name = static::getName();
+
+        $theme = 'inspired::templates.'.$vendor.'.'.$name;
+
+        return $theme;
+    }
+
+    protected static function getVendor()
     {
         $current_vendor = Settings::where('settings_key', 'vendor')->
             first()->toArray();
@@ -18,7 +29,7 @@ class InspiredTemplate
         return config('inspire.settings.vendor', 'tetravalence');
     }
 
-    public static function getName()
+    protected static function getName()
     {
         $current_name = Settings::where('settings_key', 'template')->
             first()->toArray();

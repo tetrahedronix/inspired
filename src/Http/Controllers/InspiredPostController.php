@@ -23,24 +23,22 @@ class InspiredPostController extends Controller
         // GET /posts
         $posts = Post::all();
 
-        $vendor = Template::getVendor();
-
-        $name = Template::getName();
-
-        $page = 'inspired::templates.'.$vendor.'.'.$name.'.index';
+        $page = Template::getTheme().'.index';
 
         return view($page, compact('posts'));
     }
 
+    /**
+     * Display a single post page.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function show($id)
     {
+        // GET /post/{id}
         $post = Post::find($id);
 
-        $vendor = Template::getVendor();
-
-        $name = Template::getName();
-
-        $page = 'inspired::templates.'.$vendor.'.'.$name.'.single';
+        $page = Template::getTheme().'.single';
 
         return view($page, compact('post'));
     }
