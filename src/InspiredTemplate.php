@@ -1,10 +1,10 @@
 <?php
 
-namespace Tetravalence\Inspire;
+namespace Tetravalence\Inspired;
 
-use Tetravalence\Inspire\InspireSettings as Settings;
+use Tetravalence\Inspired\InspiredSettings as Settings;
 
-class InspireTemplate
+class InspiredTemplate
 {
     public static function getVendor()
     {

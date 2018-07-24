@@ -1,4 +1,4 @@
-@inject('general', 'Tetravalence\Inspire\Services\GeneralTemplateTags')
+@inject('general', 'Tetravalence\Inspired\Services\GeneralTemplateTags')
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>

@@ -1,13 +1,13 @@
 <?php
 
-namespace Tetravalence\Inspire\Http\Controllers;
+namespace Tetravalence\Inspired\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Tetravalence\Inspire\InspireTemplate as Template;
-use Tetravalence\Inspire\InspirePost as Post;
+use Tetravalence\Inspired\InspiredTemplate as Template;
+use Tetravalence\Inspired\InspiredPost as Post;
 
-class InspirePostController extends Controller
+class InspiredPostController extends Controller
 {
     public function __construct()
     {
@@ -27,7 +27,7 @@ class InspirePostController extends Controller
 
         $name = Template::getName();
 
-        $page = 'inspire::templates.'.$vendor.'.'.$name.'.index';
+        $page = 'inspired::templates.'.$vendor.'.'.$name.'.index';
 
         return view($page, compact('posts'));
     }

@@ -1,10 +1,10 @@
 <?php
 
-namespace Tetravalence\Inspire;
+namespace Tetravalence\Inspired;
 
 use Illuminate\Database\Eloquent\Model;
 
-class InspirePostDetail extends Model
+class InspiredPostDetail extends Model
 {
     /*
     |--------------------------------------------------------------------------

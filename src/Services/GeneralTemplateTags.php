@@ -1,22 +1,22 @@
 <?php
 
-namespace Tetravalence\Inspire\Services;
+namespace Tetravalence\Inspired\Services;
 
-use Tetravalence\Inspire\InspireSettings as Settings;
+use Tetravalence\Inspired\InspiredSettings as Settings;
 
 class GeneralTemplateTags
 {
     /**
      * The settings model implementation.
      *
-     * @var \Tetravalence\Inspire\InspireSettings
+     * @var \Tetravalence\Inspired\InspiredSettings
      */
     public $settings;
 
     /**
      * Create a new Settings instance.
      *
-     * @param \Tetravalence\Inspire\InspireSettings
+     * @param \Tetravalence\Inspired\InspiredSettings
      * @return void
      */
     public function __construct(Settings $settings)
@@ -37,7 +37,7 @@ class GeneralTemplateTags
             return $current_title;
         }
 
-        return config('inspire.settings.title', 'Get Inspired');
+        return config('inspired.settings.title', 'Get Inspired');
     }
 
     /**
@@ -53,7 +53,7 @@ class GeneralTemplateTags
             return $current_description;
         }
 
-        return config('inspire.settings.description',
+        return config('inspired.settings.description',
             'Just another Inspired site');
     }
 

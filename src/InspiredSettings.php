@@ -1,10 +1,10 @@
 <?php
 
-namespace Tetravalence\Inspire;
+namespace Tetravalence\Inspired;
 
 use Illuminate\Database\Eloquent\Model;
 
-class InspireSettings extends Model
+class InspiredSettings extends Model
 {
     //
     public $timestamps = false;

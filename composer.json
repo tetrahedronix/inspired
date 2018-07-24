@@ -1,11 +1,11 @@
 {
-    "name": "tetravalence/inspire",
+    "name": "tetravalence/inspired",
     "description": "Another content management system for Laravel framework",
-    "keywords": ["laravel", "inspire", "cms"],
+    "keywords": ["laravel", "inspired", "cms"],
     "type": "library",
     "autoload": {
         "psr-4": {
-            "Tetravalence\\Inspire\\": "src/"
+            "Tetravalence\\Inspired\\": "src/"
         }
     },
     "require": {
@@ -23,7 +23,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Tetravalence\\Inspire\\InspireServiceProvider"
+                "Tetravalence\\Inspired\\InspiredServiceProvider"
             ]
         }
     }

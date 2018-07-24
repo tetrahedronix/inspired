@@ -1,11 +1,11 @@
 <?php
 
-namespace Tetravalence\Inspire;
+namespace Tetravalence\Inspired;
 
-trait InspireServiceBindings
+trait InspiredServiceBindings
 {
     /**
-     * All of the service bindings for Inspire package.
+     * All of the service bindings for Inspired package.
      *
      * @var array
      */

@@ -1,13 +1,13 @@
 <?php
 
-namespace Tetravalence\Inspire;
+namespace Tetravalence\Inspired;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 
-class InspireServiceProvider extends ServiceProvider
+class InspiredServiceProvider extends ServiceProvider
 {
-    use InspireServiceBindings;
+    use InspiredServiceBindings;
     /**
      * Indicates if loading of provider is deferred.
      *
@@ -52,12 +52,12 @@ class InspireServiceProvider extends ServiceProvider
     {
         $this->publishes([
             dirname(dirname(__FILE__)).
-                '/config/inspire.php' => config_path('inspire.php'),
-            ], 'inspire-config');
+                '/config/inspired.php' => config_path('inspired.php'),
+            ], 'inspired-config');
     }
 
     /**
-     * Register the Inspire migrations.
+     * Register the Inspired migrations.
      *
      * @return void
      */
@@ -68,25 +68,25 @@ class InspireServiceProvider extends ServiceProvider
     }
 
     /**
-     * Register the Inspire resources.
+     * Register the Inspired resources.
      *
      * @return void
      */
     protected function bootResources()
     {
         $this->loadViewsFrom(dirname(dirname(__FILE__)).
-           '/resources/views', 'inspire');
+           '/resources/views', 'inspired');
     }
 
     /**
-     * Register the Inspire routes.
+     * Register the Inspired routes.
      *
      * @return void
      */
     public function bootRoutes()
     {
         Route::group([
-            'namespace' => 'Tetravalence\Inspire\Http\Controllers',
+            'namespace' => 'Tetravalence\Inspired\Http\Controllers',
         ], function () {
            $this->loadRoutesFrom(dirname(dirname(__FILE__)).
                '/routes/blog.php');
@@ -110,15 +110,15 @@ class InspireServiceProvider extends ServiceProvider
     }
 
     /**
-     * Setup the configuration for Inspire.
+     * Setup the configuration for Inspired.
      *
      * @return void
      */
     protected function registerConfiguration()
     {
-        $packageConfigFile = dirname(dirname(__FILE__)) . '/config/inspire.php';
+        $packageConfigFile = dirname(dirname(__FILE__)) . '/config/inspired.php';
 
-        $this->mergeConfigFrom($packageConfigFile, 'inspire');
+        $this->mergeConfigFrom($packageConfigFile, 'inspired');
     }
 
     /**
