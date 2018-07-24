@@ -31,4 +31,17 @@ class InspiredPostController extends Controller
 
         return view($page, compact('posts'));
     }
+
+    public function show($id)
+    {
+        $post = Post::find($id);
+
+        $vendor = Template::getVendor();
+
+        $name = Template::getName();
+
+        $page = 'inspired::templates.'.$vendor.'.'.$name.'.single';
+
+        return view($page, compact('post'));
+    }
 }

@@ -104,9 +104,7 @@
           </div>
 
           <div class="posts">
-              @foreach ($posts as $post)
-                  <li><a href="post/{{$post->id}}">{{ $post->post_title }}</a></li>
-              @endforeach
+            <h1>{{ $post->post_title }}</h1>
           </div>
 
         </div>
