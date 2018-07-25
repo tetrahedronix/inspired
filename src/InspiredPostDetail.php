@@ -8,6 +8,19 @@ class InspiredPostDetail extends Model
 {
     /*
     |--------------------------------------------------------------------------
+    | Timestamps
+    |--------------------------------------------------------------------------
+    |
+    | If you need to customize the names of the columns used to store the
+    | timestamps, you may set the CREATED_AT and UPDATED_AT constants in your
+    | model:
+    */
+    const CREATED_AT = 'post_date';
+
+    const UPDATED_AT = 'post_last_update';
+
+    /*
+    |--------------------------------------------------------------------------
     | Primary Key
     |--------------------------------------------------------------------------
     |
@@ -21,6 +34,5 @@ class InspiredPostDetail extends Model
      *
      * @var bool
      */
-    public $timestamps = false;
-
+    //public $timestamps = false;
 }

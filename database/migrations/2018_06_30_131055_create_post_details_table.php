@@ -18,14 +18,14 @@ class CreatePostDetailsTable extends Migration
             $table->bigInteger('post_id', false, true);
             $table->longText('post_body');
             $table->char('post_discuss_status', 20);
-            $table->dateTime('post_last_update');
+            $table->timestamp('post_date')->nullable();
+            $table->timestamp('post_last_update')->nullable();
             $table->text('post_excerpt');
             $table->char('post_protected', 255);
             $table->bigInteger('post_parent');
             $table->char('post_slug', 255);
             $table->char('post_metakeys', 255);
             $table->foreign('post_id')->references('id')->on('posts');
-            //$table->timestamps();
         });
     }
 
