@@ -2,7 +2,7 @@
 
 namespace Tetravalence\Inspired;
 
-use Tetravalence\Inspired\InspiredSettings as Settings;
+use Tetravalence\Inspired\InspiredSetting as Settings;
 
 class InspiredTemplate
 {

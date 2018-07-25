@@ -2,21 +2,21 @@
 
 namespace Tetravalence\Inspired\Services;
 
-use Tetravalence\Inspired\InspiredSettings as Settings;
+use Tetravalence\Inspired\InspiredSetting as Settings;
 
 class GeneralTemplateTags
 {
     /**
      * The settings model implementation.
      *
-     * @var \Tetravalence\Inspired\InspiredSettings
+     * @var \Tetravalence\Inspired\InspiredSetting
      */
     public $settings;
 
     /**
      * Create a new Settings instance.
      *
-     * @param \Tetravalence\Inspired\InspiredSettings
+     * @param \Tetravalence\Inspired\InspiredSetting
      * @return void
      */
     public function __construct(Settings $settings)

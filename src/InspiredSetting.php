@@ -4,7 +4,7 @@ namespace Tetravalence\Inspired;
 
 use Illuminate\Database\Eloquent\Model;
 
-class InspiredSettings extends Model
+class InspiredSetting extends Model
 {
     //
     public $timestamps = false;
