@@ -29,7 +29,7 @@ class CreatePostsTable extends Migration
             $table->text('post_title');
             $table->dateTime('post_date');
             $table->char('post_type', 20)->default('article');
-            $table->char('post_status', 20)->default('published');
+            $table->char('post_status', 20)->default('draft');
             $table->foreign('post_uid')->references('id')->on('users');
             //$table->timestamps();
         });
