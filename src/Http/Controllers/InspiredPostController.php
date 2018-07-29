@@ -33,10 +33,10 @@ class InspiredPostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Post $post)
     {
         // GET /post/{id}
-        $post = Post::find($id);
+        //$post = Post::find($id);
 
         $page = Template::getTheme().'.single';
 
