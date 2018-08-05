@@ -12,7 +12,7 @@ class InspiredTemplate
 
         $name = static::getName();
 
-        $theme = 'inspired::templates.'.$vendor.'.'.$name;
+        $theme = '/templates/'.$vendor.'/'.$name.'/';
 
         return $theme;
     }

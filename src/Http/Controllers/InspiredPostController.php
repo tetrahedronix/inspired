@@ -23,7 +23,7 @@ class InspiredPostController extends Controller
         // GET /posts
         $posts = Post::all();
 
-        $page = Template::getTheme().'.index';
+        $page = 'inspired::posts.index';
 
         return view($page, compact('posts'));
     }
@@ -38,7 +38,7 @@ class InspiredPostController extends Controller
         // GET /post/{id}
         //$post = Post::find($id);
 
-        $page = Template::getTheme().'.single';
+        $page = 'inspired::posts.single';
 
         return view($page, compact('post'));
     }

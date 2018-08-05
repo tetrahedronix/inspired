@@ -4,6 +4,7 @@ namespace Tetravalence\Inspired;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
+use Tetravalence\Inspired\InspiredTemplate as Template;
 
 class InspiredServiceProvider extends ServiceProvider
 {
@@ -75,7 +76,7 @@ class InspiredServiceProvider extends ServiceProvider
     protected function bootResources()
     {
         $this->loadViewsFrom(dirname(dirname(__FILE__)).
-           '/resources/views', 'inspired');
+           '/resources/views'.Template::getTheme(), 'inspired');
     }
 
     /**
