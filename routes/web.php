@@ -2,4 +2,4 @@
 
 Route::get('/', 'InspiredPostController@index');
 
-Route::get('/post/{post}', 'InspiredPostController@show');
+Route::get('/post/id/{post}', 'InspiredPostController@show')->where('post', '[0-9]+');
