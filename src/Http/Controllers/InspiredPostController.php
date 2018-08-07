@@ -34,11 +34,20 @@ class InspiredPostController extends Controller
      */
     public function show(Post $post)
     {
-        // GET /post/{id}
+        // GET /post/id/{id}
         //$post = Post::find($id);
 
         $page = 'inspired::posts.single';
 
         return view($page, compact('post'));
+    }
+
+    public function create()
+    {
+        // GET /post/create
+
+        $page = 'inspired::posts.create';
+
+        return view($page);
     }
 }
