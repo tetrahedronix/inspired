@@ -31,5 +31,6 @@
         </div>
       </div>
     </div>
+    @include('inspired::layouts.footer')
   </body>
 </html>

@@ -7,3 +7,7 @@
       <li><a href="post/{{ $post->id }}">{{ $post->post_title }}</a></li>
   @endforeach
 @endsection
+
+@section('footer')
+  <!-- Start footer section -->  
+@endsection
