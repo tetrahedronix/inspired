@@ -33,6 +33,8 @@ class InspiredServiceProvider extends ServiceProvider
          */
         $this->app->booted([$this, 'bootRoutes']);
 
+        $this->bootMiddleware();
+
         /* If your package conains database migrations, you may use the
          * loadMigrationsFrom method to inform Laravel how to load them.
          */
@@ -57,6 +59,13 @@ class InspiredServiceProvider extends ServiceProvider
             ], 'inspired-config');
     }
 
+    protected  function bootMiddleware()
+    {
+        $this->app['router']->aliasMiddleware(
+            'dashboard',
+            'Tetravalence\Inspired\Http\Middleware\InspiredDashboard'
+        );
+    }
     /**
      * Register the Inspired migrations.
      *
