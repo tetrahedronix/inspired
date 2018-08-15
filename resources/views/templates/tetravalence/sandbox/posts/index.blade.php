@@ -1,6 +1,7 @@
 @inject('general', 'Tetravalence\Inspired\Services\GeneralTemplateTags')
 @extends('inspired::layouts.posts')
 
+@section('title', $general->title())
 
 @section('posts')
   @foreach ($posts as $post)
