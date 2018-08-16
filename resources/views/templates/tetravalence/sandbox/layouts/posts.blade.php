@@ -1,5 +1,6 @@
 @inject('general', 'Tetravalence\Inspired\Services\GeneralTemplateTags')
 @include('inspired::layouts.head')
+  </head>
   <body>
     <div class="flex-center position-ref full-height">
       <div class="content">
