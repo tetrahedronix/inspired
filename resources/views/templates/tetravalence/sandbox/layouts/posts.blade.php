@@ -33,5 +33,6 @@
       </div>
     </div>
     @include('inspired::layouts.footer')
+    @include('inspired::bootstrap')
   </body>
 </html>
