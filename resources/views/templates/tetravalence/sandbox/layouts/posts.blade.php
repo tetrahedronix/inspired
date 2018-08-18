@@ -1,38 +1,34 @@
 @inject('general', 'Tetravalence\Inspired\Services\GeneralTemplateTags')
 @include('inspired::layouts.head')
   </head>
-  <body>
-    <div class="flex-center position-ref full-height">
-      <div class="content">
-        <div class="title m-b-md">
-          Get Inspired
-        </div>
+  <body class="text-center">
 
-        <div class="description m-b-md">
-          {{ $general->description() }}
-        </div>
+    <div class="flex-center flex-column  position-ref full-height">
 
-        <div class="links">
-          <a href="https://laravel.com/docs">Documentation</a>
-          <a href="https://laracasts.com">Laracasts</a>
-          <a href="https://laravel-news.com">News</a>
-          <a href="https://forge.laravel.com">Forge</a>
-          <a href="https://github.com/laravel/laravel">GitHub</a>
-            @if (Route::has('login'))
-              @auth
-                <a href="{{ url('/home') }}">Home</a>
-              @else
-                <a href="{{ route('login') }}">Login</a>
-                <a href="{{ route('register') }}">Register</a>
-              @endauth
-            @endif
+      <header>
+            @include('inspired::layouts.nav')
+      </header>
+
+      <main>
+        <div class="content">
+          <div class="title m-b-md">
+            Get Inspired
+          </div>
+
+          <div class="description m-b-md">
+            {{ $general->description() }}
+          </div>
+
+          <div class="posts">
+            @yield('posts')
+          </div>
         </div>
-        <div class="posts">
-          @yield('posts')
-        </div>
-      </div>
+      </main>
+
+      @include('inspired::layouts.footer')
+
     </div>
-    @include('inspired::layouts.footer')
+
     @include('inspired::bootstrap')
   </body>
 </html>
