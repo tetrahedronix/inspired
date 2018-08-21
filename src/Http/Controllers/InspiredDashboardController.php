@@ -7,10 +7,19 @@ use App\Http\Controllers\Controller;
 
 class InspiredDashboardController extends Controller
 {
-    /*public function __construct()
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
     {
-        $this->middleware('auth');
-    } */
+        // GET /posts/create
+
+        $page = 'inspired::posts.create';
+
+        return view($page);
+    }
 
     public function index()
     {

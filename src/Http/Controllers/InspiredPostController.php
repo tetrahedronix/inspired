@@ -12,6 +12,7 @@ class InspiredPostController extends Controller
     {
         $this->middleware('web');
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -20,6 +21,7 @@ class InspiredPostController extends Controller
     public function index()
     {
         // GET /posts
+
         $posts = Post::all();
 
         $page = 'inspired::posts.index';
@@ -34,20 +36,11 @@ class InspiredPostController extends Controller
      */
     public function show(Post $post)
     {
-        // GET /post/id/{id}
+        // GET /posts/id/{id}
         //$post = Post::find($id);
 
         $page = 'inspired::posts.single';
 
         return view($page, compact('post'));
-    }
-
-    public function create()
-    {
-        // GET /post/create
-
-        $page = 'inspired::posts.create';
-
-        return view($page);
     }
 }
