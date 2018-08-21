@@ -13,9 +13,7 @@
  * This single route declaration creates multiple routes to handle a variety
  * of actions on the route.
  */
-Route::resources([
-    'posts' => 'InspiredPostController']
-)->only(['index', 'show']);
+Route::resource('posts', 'InspiredPostController')->only(['index', 'show']);
 
 Route::middleware('web', 'auth', 'dashboard')->group(function () {
     Route::redirect('/home', '/dashboard');
