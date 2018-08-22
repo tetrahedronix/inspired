@@ -15,7 +15,7 @@
  */
 Route::resource('posts', 'InspiredPostController')->only(['index', 'show']);
 
-Route::middleware('web', 'auth', 'dashboard')->group(function () {
+Route::middleware('web', 'auth', 'dashboard')->name('admin.')->group(function () {
     Route::redirect('/home', '/dashboard');
     Route::get('/dashboard', 'InspiredDashboardController@index');
     Route::get('/dashboard/create', 'InspiredDashboardController@create');

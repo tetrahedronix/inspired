@@ -21,7 +21,7 @@ class InspiredDashboard
 
         // Display an error message.
 
-        if ($request->route()->named('template')) {
+        if ($request->route()->named('admin.template')) {
             // Creates the default link.
             Template::createLink();
         }
