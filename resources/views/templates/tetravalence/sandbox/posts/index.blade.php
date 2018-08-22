@@ -5,7 +5,7 @@
 
 @section('posts')
   @foreach ($posts as $post)
-      <li><a href="post/id/{{ $post->id }}">{{ $post->post_title }}</a></li>
+      <li><a href="posts/{{ $post->id }}">{{ $post->post_title }}</a></li>
   @endforeach
 @endsection
 
