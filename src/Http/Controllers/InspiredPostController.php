@@ -39,7 +39,7 @@ class InspiredPostController extends Controller
         // GET /posts/id/{id}
         //$post = Post::find($id);
 
-        $page = 'inspired::posts.single';
+        $page = 'inspired::posts.show';
 
         return view($page, compact('post'));
     }
