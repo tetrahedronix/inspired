@@ -15,7 +15,7 @@
 
   <div class="form-group">
     <label for="text-editor">Post</label>
-    <textarea class="form-control" name="text-editor" rows="8" cols="80"></textarea>
+    <textarea class="form-control" name="post_body" rows="8" cols="80"></textarea>
   </div>
 
   <button type="submit" class="btn btn-primary">Publish</button>
