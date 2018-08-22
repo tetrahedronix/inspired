@@ -21,7 +21,7 @@ class InspiredDashboardController extends Controller
         return view($page);
     }
 
-    public function index()
+    public function dashboard()
     {
         return view('home');
     }
