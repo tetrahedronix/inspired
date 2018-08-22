@@ -3,7 +3,9 @@
 @section('posts')
   <h1>Create a  post</h1>
 
-  <form method="post" action="/posts">
+  <form method="post" action="/dashboard/posts">
+
+  @csrf
 
   <div class="form-group">
     <label for="title">Title</label>
