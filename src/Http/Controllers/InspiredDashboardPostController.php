@@ -4,6 +4,8 @@ namespace Tetravalence\Inspired\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Tetravalence\Inspired\InspiredPost as Post;
+use Tetravalence\Inspired\InspiredPostDetail as PostDetail;
 
 class InspiredDashboardPostController extends Controller
 {
@@ -24,7 +26,11 @@ class InspiredDashboardPostController extends Controller
      */
     public function create()
     {
-        //
+        // GET /posts/create
+
+        $page = 'inspired::posts.create';
+
+        return view($page);
     }
 
     /**
