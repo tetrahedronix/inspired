@@ -2,9 +2,9 @@
 
 namespace Tetravalence\Inspired;
 
-use Illuminate\Database\Eloquent\Model;
+use Tetravalence\Inspired\InspiredModel;
 
-class InspiredPost extends Model
+class InspiredPost extends InspiredModel
 {
     public $timestamps = false;
 

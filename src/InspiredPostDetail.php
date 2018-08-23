@@ -2,9 +2,9 @@
 
 namespace Tetravalence\Inspired;
 
-use Illuminate\Database\Eloquent\Model;
+use Tetravalence\Inspired\InspiredModel;
 
-class InspiredPostDetail extends Model
+class InspiredPostDetail extends InspiredModel
 {
     /*
     |--------------------------------------------------------------------------
