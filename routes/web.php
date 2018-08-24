@@ -9,6 +9,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', 'InspiredPostController@index');
 /*
  * This single route declaration creates multiple routes to handle a variety
  * of actions on the route.
