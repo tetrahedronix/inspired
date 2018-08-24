@@ -35,4 +35,7 @@ class InspiredPostDetail extends InspiredModel
      * @var bool
      */
     //public $timestamps = false;
+
+    protected $table = 'post_details';
+
 }
