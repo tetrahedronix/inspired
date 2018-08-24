@@ -15,9 +15,13 @@
 
     <div class="form-group">
       <label for="text-editor">Post</label>
-      <textarea class="form-control" name="post_body" rows="8" cols="80" required></textarea>
+      <textarea class="form-text" name="post_body" rows="8" cols="80" required></textarea>
     </div>
 
+    <div class="form-group">
+      <label for="excerpt">Excerpt</label>
+      <textarea class="form-text" name="post_excerpt" rows="3" cols="80"></textarea>
+    </div>
     <div class="form-group">
       <button type="submit" class="btn btn-primary">Publish</button>
     </div>
