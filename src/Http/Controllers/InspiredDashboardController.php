@@ -16,7 +16,7 @@ class InspiredDashboardController extends Controller
     {
         // GET /posts/create
 
-        $page = 'inspired::posts.create';
+        $page = 'inspired::dashboard.create';
 
         return view($page);
     }

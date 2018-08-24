@@ -22,7 +22,7 @@
       <button type="submit" class="btn btn-primary">Publish</button>
     </div>
 
-    @include('inspired::posts.errors')
+    @include('inspired::dashboard.errors')
 
   </form>
 

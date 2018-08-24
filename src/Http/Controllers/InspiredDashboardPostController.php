@@ -16,7 +16,9 @@ class InspiredDashboardPostController extends Controller
      */
     public function index()
     {
-        //
+        $posts = Post::all();
+
+        return view('inspired::dashboard.show', compact('posts'));
     }
 
     /**
@@ -28,7 +30,7 @@ class InspiredDashboardPostController extends Controller
     {
         // GET /posts/create
 
-        $page = 'inspired::posts.create';
+        $page = 'inspired::dashboard.create';
 
         return view($page);
     }
