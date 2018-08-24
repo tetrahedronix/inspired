@@ -85,7 +85,10 @@ class InspiredServiceProvider extends ServiceProvider
     protected function bootResources()
     {
         $this->loadViewsFrom(dirname(dirname(__FILE__)).
-           '/resources/views'.Template::getTheme(), 'inspired');
+            '/resources/views'.Template::getTheme(), 'inspired');
+
+        $this->loadViewsFrom(dirname(dirname(__FILE__)).
+            '/resources/views/dashboard', 'inspired-dashboard');
     }
 
     /**

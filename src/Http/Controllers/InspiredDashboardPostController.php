@@ -18,7 +18,7 @@ class InspiredDashboardPostController extends Controller
     {
         $posts = Post::all();
 
-        return view('inspired::dashboard.index', compact('posts'));
+        return view('inspired-dashboard::index', compact('posts'));
     }
 
     /**
@@ -30,7 +30,7 @@ class InspiredDashboardPostController extends Controller
     {
         // GET /posts/create
 
-        $page = 'inspired::dashboard.create';
+        $page = 'inspired-dashboard::create';
 
         return view($page);
     }
@@ -132,7 +132,7 @@ class InspiredDashboardPostController extends Controller
         //
         // GET /posts/{post}
 
-        $page = 'inspired::dashboard.show';
+        $page = 'inspired-dashboard::show';
 
         return view($page);
     }

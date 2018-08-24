@@ -52,7 +52,7 @@
       <button type="submit" class="btn btn-primary">Publish</button>
     </div>
 
-    @include('inspired::dashboard.errors')
+    @include('inspired-dashboard::errors')
 
   </form>
 
