@@ -4,9 +4,13 @@
 @section('title', $general->title())
 
 @section('posts')
-  @foreach ($posts as $post)
-      <li><a href="posts/{{ $post->id }}">{{ $post->post_title }}</a></li>
-  @endforeach
+  @if (! $posts->isEmpty())
+    <ul>
+    @foreach ($posts as $post)
+        <li><a href="posts/{{ $post->id }}">{{ $post->post_title }}</a></li>
+    @endforeach
+    </ul>
+  @endif
 @endsection
 
 @section('footer')
