@@ -5,6 +5,7 @@ namespace Tetravalence\Inspired\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Tetravalence\Inspired\InspiredPost as Post;
+use Tetravalence\Inspired\InspiredPostDetail as PostDetail;
 
 class InspiredPostController extends Controller
 {
@@ -24,9 +25,11 @@ class InspiredPostController extends Controller
 
         $posts = Post::all();
 
+        $post_details = PostDetail::all();
+
         $page = 'inspired::posts.index';
 
-        return view($page, compact('posts'));
+        return view($page, compact('posts', 'post_details'));
     }
 
     /**
@@ -39,8 +42,10 @@ class InspiredPostController extends Controller
         // GET /posts/id/{id}
         //$post = Post::find($id);
 
+        $post_details = PostDetail::find($post->id);
+
         $page = 'inspired::posts.show';
 
-        return view($page, compact('post'));
+        return view($page, compact('post', 'post_details'));
     }
 }
