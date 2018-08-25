@@ -8,7 +8,7 @@
       <li class="links nav-item"><a class="nav-link" href="https://github.com/laravel/laravel">GitHub</a></li>
         @if (Route::has('login'))
           @auth
-            <li class="links nav-item active"><a class="nav-link" href="{{ url('/home') }}">Home</a></li>
+            <li class="links nav-item active"><a class="nav-link" href="{{ url('/dashboard') }}">Admin</a></li>
           @else
             <li class="links nav-item"><a class="nav-link" href="{{ route('login') }}">Login</a></li>
             <li class="links nav-item"><a class="nav-link" href="{{ route('register') }}">Register</a></li>
