@@ -4,13 +4,13 @@
 @section('title', $general->title())
 
 @section('posts')
-  @if (! $posts->isEmpty())
-    <ul>
-    @foreach ($posts as $post)
-        <li><a href="posts/{{ $post->id }}">{{ $post->post_title }}</a></li>
-    @endforeach
-    </ul>
-  @endif
+@if (! $posts->isEmpty())
+  <ul>
+@foreach ($posts as $post)
+    @include('inspired::posts.single')
+@endforeach
+  </ul>
+@endif
 @endsection
 
 @section('footer')
