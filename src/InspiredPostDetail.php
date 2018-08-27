@@ -38,4 +38,8 @@ class InspiredPostDetail extends InspiredModel
 
     protected $table = 'post_details';
 
+    public function posts()
+    {
+        return $this->belongsTo('Tetravalence\Inspired\InspiredPost');
+    }
 }

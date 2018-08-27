@@ -10,4 +10,8 @@ class InspiredPost extends InspiredModel
 
     protected $table = 'posts';
 
+    public function details()
+    {
+        return $this->hasOne('Tetravalence\Inspired\InspiredPostDetail', 'post_id', 'id');
+    }
 }
