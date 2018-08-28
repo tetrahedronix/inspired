@@ -14,7 +14,7 @@ class InspiredDashboard
             abort(403, 'Unauthorized Action');
         }
 
-        if ($request->route()->named('template') && Template::validateLink()) {
+        if ($request->route()->named('admin.template') && Template::validateLink()) {
             // File exists
             return $next($request);
         }
