@@ -23,9 +23,16 @@ class InspiredPostController extends Controller
     {
         // GET /posts
 
+        //$posts = new Post;
+
         $posts = Post::all();
 
-        $post_details = PostDetail::all();
+        // Show details
+        $post_details = null;
+
+        // Returns all posts in descendening order:
+        //$collection = PostDetail::latest('post_date')->get();
+        //$collection = Post::find(1)->details;
 
         $page = 'inspired::posts.index';
 
