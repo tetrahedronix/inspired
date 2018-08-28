@@ -59,8 +59,12 @@ class InspiredServiceProvider extends ServiceProvider
             ], 'inspired-config');
         $this->publishes([
             dirname(dirname(__FILE__)).
-                '/resources/assets' => public_path(),
-            ], 'inspired-assets');
+                '/public' => public_path(),
+            ], 'inspired-public-assets');
+        $this->publishes([
+            dirname(dirname(__FILE__)).
+                '/resources/assets' => resource_path(),
+            ], 'inspired-resources-assets');
     }
 
     protected  function bootMiddleware()
