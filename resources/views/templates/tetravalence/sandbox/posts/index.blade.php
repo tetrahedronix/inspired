@@ -7,7 +7,7 @@
 @if (! $posts->isEmpty())
   <ul>
 @foreach ($posts as $post)
-    @include('inspired::posts.single')
+    @include('inspired::posts.content')
 @endforeach
   </ul>
 @endif

@@ -5,11 +5,7 @@
 
 @section('posts')
 
-  <div class="blog-post">
-    <h1>{{ $post->post_title }}</h1>
-
-    {{ $post_details->post_body }}
-  </div>
+  @include('inspired::posts.content')
 
 @endsection
 
