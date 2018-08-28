@@ -15,13 +15,28 @@ class InspiredTemplate
         $package_resources = base_path().
             '/vendor/tetravalence/inspired/resources/views'. static::getTheme();
 
-        if (! File::exists($public_resources)) {
+        $file_check = File::exists($public_resources.'/assets');
+        $link_check = is_link($public_resources.'/assets');
+
+        // 1. Link exists but it's broken
+        if ($link_check && (! $file_check)) {
+            unlink($public_resources.'/assets');
+            symlink($package_resources.'/assets', $public_resources.'/assets');
+            // Stop.
+            return;
+        }
+
+        //2. Link exists and it's OK
+        // Previously validated by validateLink()
+
+        //3. Link does not exist
+        if (! $link_check) {
             // Make parent directories as needed
             File::makeDirectory(
                 $public_resources,
                 $mode = 0755,
                 $recursive = true,
-                $force = false
+                $force = true
             );
             symlink($package_resources.'/assets', $public_resources.'/assets');
         }
@@ -67,7 +82,7 @@ class InspiredTemplate
         $public_resources = public_path().
             '/vendor/'.static::getVendor().'/assets';
 
-        return File::exists($public_resources) ?
+        return File::exists($public_resources) && is_link($public_resources) ?
             $public_resources : false;
     }
 }
