@@ -1,8 +1,15 @@
+
 <li>
 
   <div class="blog-post">
 
-    <h2 class="blog-post-title"><a href="{{ $post->id }}">{{ $post->post_title }}</a></h2>
+    <h2 class="blog-post-title">
+      @if (Request::is('/') || Request::is('posts'))
+      <a href="posts/{{ $post->id }}">{{ $post->post_title }}</a>
+      @else
+      {{ $post->post_title }}
+      @endif
+    </h2>
 
     @if (! empty( $post_details))
 
