@@ -1,30 +1,32 @@
 
-<li>
+<div class="blog-comment">
+  <ul>
+    <li>
 
-  <div class="blog-comment">
+      @if (! empty($post_details))
 
-    @if (! empty($post_details))
+      <p class="blog-comment-meta">
 
-    <p class="blog-comment-meta">
+        {{ $post_details->post_date->toFormattedDateString() }} <a href="#">Giulio</a>
 
-      {{ $post_details->post_date->toFormattedDateString() }} <a href="#">Giulio</a>
+      </p>
+        @if (! empty($post->comments))
 
-    </p>
-      @if (! empty($post->comments))
+          @foreach ($post->comments as $comment)
 
-        @foreach ($post->comments as $comment)
+            <article>
 
-          <article>
+               {{ $comment->comment_body }}
 
-             {{ $comment->comment_body }}
+            </article>
 
-          </article>
+          @endforeach
 
-        @endforeach
+        @endif
 
       @endif
 
-    @endif
-  </div>
+    </li>
+  </ul>
 
-</li>
+</div>

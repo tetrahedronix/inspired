@@ -5,11 +5,9 @@
 
 @section('posts')
 @if (! $posts->isEmpty())
-  <ul>
-@foreach ($posts as $post)
-    @include('inspired::posts.content')
-@endforeach
-  </ul>
+  @foreach ($posts as $post)
+      @include('inspired::posts.content')
+  @endforeach
 @endif
 @endsection
 
