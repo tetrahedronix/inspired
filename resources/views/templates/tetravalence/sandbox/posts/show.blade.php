@@ -4,9 +4,12 @@
 @section('title', $general->title())
 
 @section('posts')
-
+<ul>
   @include('inspired::posts.content')
-
+</ul>  
+<ul>
+  @include('inspired::posts.comment')
+</ul>
 @endsection
 
 @section('footer')
