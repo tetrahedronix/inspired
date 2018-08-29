@@ -2,7 +2,7 @@
 
 namespace Tetravalence\Inspired;
 
-use Illuminate\Database\Eloquent\Model;
+use Tetravalence\Inspired\InspiredModel;
 
 class InspiredComment extends InspiredModel
 {
@@ -20,4 +20,9 @@ class InspiredComment extends InspiredModel
     const UPDATED_AT = 'comment_last_update';
 
     protected $table = 'comments';
+
+    public function post()
+    {
+        return $this->belongsTo('Tetravalence\Inspired\InspiredPost', 'id');
+    }
 }
