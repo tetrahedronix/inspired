@@ -13,7 +13,7 @@
         <footer class="blog-comment-meta">
 
           <div class="blog-comment-metadata">
-            On {{ $comment->comment_date }}
+            {{ $comment->comment_date->diffForHumans() }}
             <span>Edit</span>
           </div>
 
@@ -33,7 +33,7 @@
         <div class="blog-comment-reply">
           Reply
         </div>
-        
+
       </article>
 
 
