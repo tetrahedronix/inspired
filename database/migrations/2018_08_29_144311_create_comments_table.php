@@ -16,10 +16,10 @@ class CreateCommentsTable extends Migration
         Schema::create('comments', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('comment_post_id', false, true);
-            $table->text('comment_body')->nullable();
+            $table->text('comment_body');
             $table->string('comment_author', 255);
             $table->string('comment_author_email', 100);
-            $table->string('comment_author_url', 200)->nullable();
+            $table->string('comment_author_url', 200);
             $table->string('comment_author_ip', 100);
             $table->timestamp('comment_date')->nullable()->useCurrent();
             $table->timestamp('comment_last_update')->nullable()->useCurrent();
