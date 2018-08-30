@@ -30,16 +30,52 @@
 
         </div>
 
-        <div class="blog-comment-reply">
-          Reply
-        </div>
-
       </article>
 
 
     </li>
 
     @endforeach
+
+    {{-- Add a comment --}}
+    <div class="card">
+
+      <div class="card-block">
+
+          <form class="" action="/comments/{{ $post->id }}/store" method="post">
+
+            @csrf
+
+            <div class="form-group">
+              <label for="comment_author">Your Name</label>
+              <input type="text" class="form-control" id="author" name="comment_author" aria-describedby="Author Name" placeholder="Enter your name here" required>
+            </div>
+
+            <div class="form-group">
+              <label for="comment_author_email">Your e-mail</label>
+              <input type="text" class="form-control" id="email" name="comment_author_email" aria-describedby="Author Email" placeholder="Enter your e-mail here" required>
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+
+            <div class="form-group">
+              <label for="comment_author_url">Website</label>
+              <input type="text" class="form-control" id="website" name="comment_author_url" aria-describedby="Author URL" placeholder="Enter your website here">
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+
+            <div class="form-group">
+              <textarea class="form-control" name="comment_body" rows="4" cols="40" placeholder="Add your thought here"></textarea>
+            </div>
+
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary">Add Comment</button>
+            </div>
+
+          </form>
+
+      </div>
+
+    </div>
 
   </ol>
 
