@@ -1,7 +1,7 @@
 
 <div class="blog-post">
 
-  <ul>
+  <ul class="list-group">
     <li>
 
       <h2 class="blog-post-title">

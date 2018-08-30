@@ -1,32 +1,17 @@
-
+@if (! empty($post->comments))
 <div class="blog-comment">
-  <ul>
-    <li>
 
-      @if (! empty($post_details))
+  <ul class="list-group">
 
-      <p class="blog-comment-meta">
+    @foreach ($post->comments as $comment)
 
-        {{ $post_details->post_date->toFormattedDateString() }} <a href="#">Giulio</a>
-
-      </p>
-        @if (! empty($post->comments))
-
-          @foreach ($post->comments as $comment)
-
-            <article>
-
-               {{ $comment->comment_body }}
-
-            </article>
-
-          @endforeach
-
-        @endif
-
-      @endif
-
+    <li class="list-group-item">
+      {{ $comment->comment_body }}
     </li>
+
+    @endforeach
+
   </ul>
 
 </div>
+@endif
