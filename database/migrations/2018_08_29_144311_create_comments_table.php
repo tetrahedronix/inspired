@@ -19,7 +19,7 @@ class CreateCommentsTable extends Migration
             $table->text('comment_body')->nullable();
             $table->string('comment_author', 255);
             $table->string('comment_author_email', 100);
-            $table->string('comment_author_url', 200);
+            $table->string('comment_author_url', 200)->nullable();
             $table->string('comment_author_ip', 100);
             $table->timestamp('comment_date')->nullable()->useCurrent();
             $table->timestamp('comment_last_update')->nullable()->useCurrent();
