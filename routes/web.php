@@ -16,6 +16,8 @@ Route::get('/', 'InspiredPostController@index');
  */
 Route::resource('posts', 'InspiredPostController')->only(['index', 'show']);
 
+Route::post('/comments/{post}/store', 'InspiredCommentController@store');
+
 Route::middleware('web', 'auth', 'dashboard')->name('admin.')->group(function () {
     Route::redirect('/home', '/dashboard');
     Route::get('/dashboard', 'InspiredDashboardController@dashboard');
