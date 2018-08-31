@@ -71,6 +71,8 @@
               <button type="submit" class="btn btn-primary">Add Comment</button>
             </div>
 
+            @include('inspired-dashboard::errors')
+
           </form>
 
       </div>
