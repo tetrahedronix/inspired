@@ -64,7 +64,7 @@
             </div>
 
             <div class="form-group">
-              <textarea class="form-control" name="comment_body" rows="4" cols="40" placeholder="Add your thought here"></textarea>
+              <textarea class="form-control" name="comment_body" rows="4" cols="40" placeholder="Add your thought here" required></textarea>
             </div>
 
             <div class="form-group">
