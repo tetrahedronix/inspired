@@ -68,21 +68,25 @@ class InspiredDashboardPostController extends Controller
         */
         $this->validate(request(), [
             'post_title' => 'required|min:1|max:512',
-            'post_body' => 'required',
+            'post_type' => 'required|string|in:article,page',
+            'post_status' => 'required|string|in:draft,pending,published',
+            'post_body' => 'present|nullable',
             'post_discuss_status' => 'required|in:open,closed',
-            'post_excerpt' => 'nullable',
+            'post_excerpt' => 'present|nullable',
             'post_protected' => 'required|string|in:yes,no',
             'post_parent' => 'required|numeric',
-            'post_slug' => 'required|alpha_dash',
-            'post_metakeys' => 'present|nullable',
+            'post_slug' => 'present|alpha_dash',
+            'post_metakeys' => 'present|alpha_num',
         ]);
 
         // Create a new Post using the request data
         $post = new Post;
 
-        // Fill the table with the request data
+        // Fill the posts table with the request data
         $post->post_uid = $request->user()->id;
         $post->post_title = request('post_title');
+        $post->post_type = request('post_type');
+        $post->post_status = request('post_status');
 
         // Save it to the database
         $post->save();
@@ -90,10 +94,18 @@ class InspiredDashboardPostController extends Controller
         // Create a new PostDetail using the request data
         $post_detail = new PostDetail;
 
-        // Fill the table with the request data
+        // Fill the post_details table with the request data
+
+        // Get latest saved post id
         $post_detail->post_id = Post::where('post_uid', $post->post_uid)->
             orderBy('id', 'desc')->first()->id;
-        $post_detail->post_body = request('post_body');
+
+        if (empty(request('post_body'))) {
+            $post_detail->post_body = '';
+        } else {
+            $post_detail->post_body = request('post_body');
+        }
+
         $post_detail->post_discuss_status = 'open';
 
         if (empty(request('post_excerpt'))) {
