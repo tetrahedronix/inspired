@@ -2,7 +2,6 @@
 
 namespace Tetravalence\Inspired\Http\Controllers;
 
-use Illuminate\Support\Facades\Request;
 use App\Http\Controllers\Controller;
 use Tetravalence\Inspired\InspiredComment as Comment;
 use Tetravalence\Inspired\InspiredPost as Post;
@@ -41,14 +40,7 @@ class InspiredCommentController extends Controller
 
     public function store(Post $post)
     {
-        Comment::create([
-            'comment_post_id' => $post->id,
-            'comment_body' => request('comment_body'),
-            'comment_author' => request('comment_author_email'),
-            'comment_author_email' => request('comment_author_email'),
-            'comment_author_url' => request('comment_author_url'),
-            'comment_author_ip' => Request::ip(),
-        ]);
+        $post->addComment(request());
 
         return back();
     }
